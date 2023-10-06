@@ -12,7 +12,7 @@ const ShuffleHero = () => {
 
   return (
     <section
-    className="relative h-[150vh] w-full overflow-hidden bg-black"
+    className="relative h-screen w-full overflow-hidden bg-black"
     style={{
       backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23171717'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
     }}
@@ -48,7 +48,7 @@ const ShuffleHero = () => {
           transition={{ delay: 2.5, duration: 0.6 }}
           className="text-base md:text-lg text-slate-700 my-4 md:my-6 text-white"
         >
-          In every small beginning, there's a blueprint for the future
+          In every small beginning, there's a blueprint for the future.
         </motion.p>
         <motion.div
           initial={{ scale: 0.7, opacity: 0 }}
