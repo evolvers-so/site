@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const tabs = ["Home", "Register Startup", "Discord Server"]
+const tabs = ["Home", "Register Startup"]
 
 const ChipTabs = () => {
   const [selected, setSelected] = useState(tabs[0]);
