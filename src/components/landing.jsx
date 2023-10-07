@@ -6,7 +6,7 @@ const ShuffleHero = () => {
   const [words, setWords] = useState([]);
 
   useEffect(() => {
-    const phrase = "Dreaming Big Starting Small.";
+    const phrase = 'Dreaming Big Starting Small.';
     setWords(phrase.split(' '));
   }, []);
 

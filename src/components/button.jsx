@@ -9,12 +9,7 @@ const WetPaintButton = (props) => {
             <Drip left="10%" height={24} delay={0.5} />
                        <Drip left="10%" height={24} delay={0.5} />
 
-            <Drip left="20%" height={24} delay={0.5} />
-            <Drip left="30%" height={14} delay={0.5} />
-            <Drip left="40%" height={54} delay={0.5} />
-            <Drip left="50%" height={104} delay={0.5} />
-            <Drip left="60%" height={10004} delay={0.5} />
-            <Drip left="70%" height={22344} delay={0.5} />
+         
 
         </button>
     );
