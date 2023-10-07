@@ -11,7 +11,9 @@ function YourComponent() {
   if (!session) {
     console.log("Session unavailable");
     return (
-      <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center">
+      <div className="min-h-screen  flex flex-col justify-center items-center" style={{
+      backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23171717'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+    }}>
         <div className="w-1/2 md:w-1/4">
           <label htmlFor="email" className="block text-white text-sm font-bold mb-2">Enter your email:</label>
           <input 

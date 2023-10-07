@@ -111,16 +111,16 @@ const Logo = () => (
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
-    <GlassLink text="Home" />
-    <GlassLink text="About" />
-    <GlassLink text="Startups" />
+    <GlassLink text="Home" link="/" />
+    <GlassLink text="About" link="/about" />
+    <GlassLink text="Startups" link="/startups" />
   </div>
 );
 
-const GlassLink = ({ text }) => {
+const GlassLink = ({ text, link }) => {
   return (
     <a
-      href="#"
+      href={link}
       className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95"
     >
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
@@ -131,9 +131,9 @@ const GlassLink = ({ text }) => {
   );
 };
 
-const TextLink = ({ text }) => {
+const TextLink = ({ text, link }) => {
   return (
-    <a href="#" className="text-white/90 transition-colors hover:text-white">
+    <a href={link} className="text-white/90 transition-colors hover:text-white">
       {text}
     </a>
   );
@@ -176,9 +176,9 @@ const MobileMenu = ({ menuOpen }) => {
     >
       <div className="flex items-center justify-between px-4 pb-4">
         <div className="flex items-center gap-4">
-          <TextLink text="Home" />
-          <TextLink text="Startups" />
-          <TextLink text="Contact" />
+          <TextLink text="Home" link="/" />
+          <TextLink text="Startups" link="/startups" />
+          <TextLink text="Contact" link="/contact" />
         </div>
         <SignInButton />
       </div>

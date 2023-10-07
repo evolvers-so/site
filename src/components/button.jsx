@@ -7,9 +7,15 @@ const WetPaintButton = (props) => {
         <button className="group relative rounded bg-violet-500 px-4 py-2.5 font-semibold text-white transition-colors hover:bg-violet-600">
             {props.name}
             <Drip left="10%" height={24} delay={0.5} />
-            <Drip left="30%" height={20} delay={3} />
-            <Drip left="57%" height={10} delay={4.25} />
-            <Drip left="85%" height={16} delay={1.5} />
+                       <Drip left="10%" height={24} delay={0.5} />
+
+            <Drip left="20%" height={24} delay={0.5} />
+            <Drip left="30%" height={14} delay={0.5} />
+            <Drip left="40%" height={54} delay={0.5} />
+            <Drip left="50%" height={104} delay={0.5} />
+            <Drip left="60%" height={10004} delay={0.5} />
+            <Drip left="70%" height={22344} delay={0.5} />
+
         </button>
     );
 };
