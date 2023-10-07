@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from 'next/router';
 
 const tabs = ["Home", "Register Startup"]
 
 const ChipTabs = () => {
-  const [selected, setSelected] = useState(tabs[0]);
+  const router = useRouter();
+  const defaultTab = router.pathname === '/startup-form' ? 'Register Startup' : 'Home';
+  const [selected, setSelected] = useState(defaultTab);
 
   return (
     <div className=" flex items-center flex-wrap gap-2">
@@ -20,14 +23,20 @@ const ChipTabs = () => {
   );
 };
 
-const Chip = ({
-  text,
-  selected,
-  setSelected,
-}) => {
+const Chip = ({ text, selected, setSelected }) => {
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    setSelected(text);
+
+    // Determine where to navigate based on the tab text
+    const path = text === "Home" ? "/dashboard" : "/startup-form";
+    router.push(path);
+  };
+
   return (
     <button
-      onClick={() => setSelected(text)}
+      onClick={handleNavigation}
       className={`${
         selected
           ? "text-white"

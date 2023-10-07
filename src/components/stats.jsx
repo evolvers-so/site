@@ -22,7 +22,7 @@ const StatsComp = () => {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="mx-auto flex max-w-xs flex-col gap-y-4 border border-gray-200 rounded-full p-8  backdrop-blur"
+              className="mx-auto flex max-w-xs flex-col gap-y-4 p-8  "
             >
               <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
               <dd className="order-first text-3xl font-semibold tracking-tight sm:text-5xl">
