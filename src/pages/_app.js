@@ -3,6 +3,7 @@ import Navigation from "../components/navigation";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "../components/footer";
+
 export default function App({ Component, pageProps }) {
   return (
     <>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 
-const tabs = ["Home", "Register Startup"]
+const tabs = ["Home", "Register Startup", "when2meet"]
 
 const ChipTabs = () => {
   const router = useRouter();
@@ -29,8 +29,21 @@ const Chip = ({ text, selected, setSelected }) => {
   const handleNavigation = () => {
     setSelected(text);
 
-    // Determine where to navigate based on the tab text
-    const path = text === "Home" ? "/dashboard" : "/startup-form";
+    let path;
+    switch (text) {
+      case "Home":
+        path = "/dashboard";
+        break;
+      case "Register Startup":
+        path = "/startup-form";
+        break;
+      case "when2meet":
+        path = "/when2meet";
+        break;
+      default:
+        path = "/";
+        break;
+    }
     router.push(path);
   };
 
