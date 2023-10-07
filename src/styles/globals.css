@@ -7,6 +7,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+@font-face {
+  font-family: 'uber';
+  src: url(/UberMoveMedium.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

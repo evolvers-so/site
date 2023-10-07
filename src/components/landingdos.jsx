@@ -2,18 +2,55 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FiDollarSign, FiEye, FiPlay, FiSearch } from "react-icons/fi";
 
-const landingDos = () => {
+
+
+const features = [
+  {
+    id: 1,
+    callout: "Get Noticed",
+    title: "Shine Bright",
+    description:
+      "In the sea of startups, it's easy to feel like a small fish. That's why we provide a dazzling platform for you to get your venture off the ground and into the spotlight. Showcase your startup, tell your story and let the world see your big dreams.",
+    contentPosition: "r",
+    Icon: FiEye,
+  },
+  {
+    id: 2,
+    callout: "Find Your Tribe",
+    title: "Connect and Conquer",
+    description:
+      "You're not alone on this journey. Discover other teen entrepreneurs, exchange ideas, and maybe even find your next co-founder. Our community is a melting pot of innovation, all sharing the hustle and excitement of starting small to dream big.",
+    contentPosition: "l",
+    Icon: FiSearch,
+  },
+  {
+    id: 3,
+    callout: "Chill Out",
+    title: "More Than Just Business",
+    description:
+      "Entrepreneurship is a wild ride, so why not enjoy it? Our space is not just about work. It's a place to unwind, have a laugh, share your highs and lows, and just hang out with people who get the grind.",
+    contentPosition: "r",
+    Icon: FiPlay,
+  },
+  {
+    id: 4,
+    callout: "Monetize",
+    title: "Your Hustle, Your Gain",
+    description:
+      "We're here to help you turn your startup dreams into tangible rewards. With tools to market your venture and a personalized website to strut your stuff, we set you on a path to financial success. It's your time to thrive in the entrepreneurial ecosystem.",
+    contentPosition: "l",
+    Icon: FiDollarSign,
+  },
+];
+
+
+const Example = () => {
   return (
     <>
-      <div className="flex h-48 flex-col items-center justify-center bg-slate-900">
-        <span className="font-semibold uppercase text-white">Scroll down</span>
-        <span className="mt-2 block rounded-full bg-indigo-600 px-4 py-1 text-center font-medium text-white md:hidden">
-          Note: This is much cooler on desktop 😊
-        </span>
-      </div>
+      <div style={{
+      backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23171717'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+    }}>
       <SwapColumnFeatures />
-      <div className="flex h-48 items-center justify-center bg-indigo-600">
-        <span className="font-semibold uppercase text-white">Scroll up</span>
       </div>
     </>
   );
@@ -23,10 +60,9 @@ const SwapColumnFeatures = () => {
   const [featureInView, setFeatureInView] = useState(features[0]);
 
   return (
-    <section className="relative mx-auto max-w-7xl">
+    <section className="relative mx-auto max-w-7xl " >
       <SlidingFeatureDisplay featureInView={featureInView} />
 
-      {/* Offsets the height of SlidingFeatureDisplay so that it renders on top of Content to start */}
       <div className="-mt-[100vh] hidden md:block" />
 
       {features.map((s) => (
@@ -96,7 +132,7 @@ const Content = ({ setFeatureInView, featureInView }) => {
             {featureInView.callout}
           </span>
           <p className="my-3 text-5xl font-bold">{featureInView.title}</p>
-          <p className="text-slate-600">{featureInView.description}</p>
+          <p className="">{featureInView.description}</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -111,44 +147,26 @@ const Content = ({ setFeatureInView, featureInView }) => {
   );
 };
 
+const ExampleFeature = ({ featureInView }) => {
+  return (
+    <div className="relative h-96 w-full rounded-xl bg-slate-800 shadow-xl">
+      <div className="flex w-full gap-1.5 rounded-t-xl bg-slate-900 p-3">
+        <div className="h-3 w-3 rounded-full bg-red-500" />
+        <div className="h-3 w-3 rounded-full bg-yellow-500" />
+        <div className="h-3 w-3 rounded-full bg-green-500" />
+      </div>
+      <div className="p-2">
+        <p className="font-mono text-sm text-slate-200">
+          <span className="text-green-300">~</span> {featureInView.title}
+         
+        </p>
+      </div>
 
-export default landingDos;
+      <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-slate-700">
+        <featureInView.Icon />
+      </span>
+    </div>
+  );
+};
 
-const features = [
-  {
-    id: 1,
-    callout: "Get noticed",
-    title: "It's simple",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
-    contentPosition: "r",
-    Icon: FiEye,
-  },
-  {
-    id: 2,
-    callout: "Find people",
-    title: "They're all here",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
-    contentPosition: "l",
-    Icon: FiSearch,
-  },
-  {
-    id: 3,
-    callout: "Have fun",
-    title: "Let's party",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
-    contentPosition: "r",
-    Icon: FiPlay,
-  },
-  {
-    id: 4,
-    callout: "Get paid",
-    title: "Cha-ching!",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
-    contentPosition: "l",
-    Icon: FiDollarSign,
-  },
-];
+export default Example;

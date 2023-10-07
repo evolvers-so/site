@@ -6,10 +6,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <SessionProvider session={pageProps.session}>
-      <div className="lowercase">
-        <Navigation />
-        <Component {...pageProps} />
-      </div>
+        <div className="lowercase font-custom">
+          <Navigation />
+          <Component {...pageProps} />
+        </div>
       </SessionProvider>
     </>
   );

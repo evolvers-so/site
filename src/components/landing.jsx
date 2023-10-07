@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import WetPaintButton from "./button";
-
+import Link from "next/link";
 const ShuffleHero = () => {
   const [words, setWords] = useState([]);
 
@@ -55,7 +55,9 @@ const ShuffleHero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 3, duration: 0.6, type: "spring", bounce: 0.3 }}
         >
-          <WetPaintButton name="join the discord" />
+          <Link href="/login">
+            <WetPaintButton name="kick off your startup" />
+          </Link>
         </motion.div>
       </div>
     </section>

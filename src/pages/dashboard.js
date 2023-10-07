@@ -7,8 +7,6 @@ function Dashboard() {
   const { data: session } = useSession();
   const router = useRouter();
   const currentTime = new Date().toLocaleTimeString();
-
-  // If session data is still loading (or if not logged in, before useEffect runs)
   if (!session) {
     return <div>Loading...</div>;
   }
