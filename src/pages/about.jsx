@@ -3,22 +3,27 @@ import { useState } from "react";
 
 const FounderCards = () => {
   return (
-    <section className="bg-neutral-900 px-4 py-12">
+    <section
+      className=" w-full h-screen py-36 grid items-center gap-8 mx-auto  "
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23171717'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+      }}
+    >
       <div className="mx-auto flex w-fit flex-wrap justify-center gap-4">
         <Card
           name="Siddharth Duggal"
           role="Founder"
-          linkedin="#linkedinURL1"
-          github="#githubURL1"
-          website="#websiteURL1"
+          linkedin="https://www.linkedin.com/in/siddharth-duggal/"
+          github="https://github.com/siddharthd0"
+          website="https://siddharthduggal.com"
           description="Description about Siddharth Duggal."
         />
         <Card
           name="Aditya Sahasranam"
           role="Founder"
-          linkedin="#linkedinURL2"
-          github="#githubURL2"
-          website="#websiteURL2"
+          linkedin="https://www.linkedin.com/in/adityasahas2025/"
+          github="https://github.com/adityasahas"
+          website="https://adityasahas.tech"
           description="Description about Aditya Sahasranam."
         />
       </div>
