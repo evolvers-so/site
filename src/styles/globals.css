@@ -22,7 +22,24 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
 
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b3b3;
+  /* Change color of scroll handle on hover */
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
